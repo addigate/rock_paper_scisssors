@@ -8,7 +8,6 @@
 <body>
     <script>
         function getComputerchoice (){
-
             let randumNum = Math.random();
             if (randumNum <= 1/3) {
                 return "rock";
@@ -21,8 +20,23 @@
                 return "scissors";
             }
         }
+        function getHumanChoice () {
+            let humanchoice = prompt("Please enter rock, paper or scissor");
 
-        console.log(getComputerchoice());
+            if (humanchoice == "rock") {
+                return "rock";
+            }
+
+            else if (humanchoice == "paper") {
+                return "paper";
+            }
+
+            else if (humanchoice == "scissors") {
+                return "scissors";
+            }
+        }
+        console.log( "the computer has chosen " + getComputerchoice());
+        console.log( "human has chosen " + getHumanChoice());
     </script>
 </body>
 </html>
