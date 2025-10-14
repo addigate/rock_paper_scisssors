@@ -7,6 +7,8 @@
 </head>
 <body>
     <script>
+        let computerScore = 0;
+        let humanScore = 0;
         function getComputerchoice (){
             let randumNum = Math.random();
             if (randumNum <= 1/3) {
@@ -14,7 +16,7 @@
             }
 
             else if (randumNum <=2/3) {
-                return "Paper";
+                return "paper";
             }
             else {
                 return "scissors";
@@ -35,8 +37,25 @@
                 return "scissors";
             }
         }
-        console.log( "the computer has chosen " + getComputerchoice());
-        console.log( "human has chosen " + getHumanChoice());
+        function playRound(humanChoice, computerChoice){
+            console.log("Human has chosen "+humanChoice+ " and computer has chosen "+computerChoice);
+            if (((humanChoice == "rock") && (computerChoice == "paper"))||((humanChoice == "scissors") && (computerChoice=="rock"))){
+                console.log("You loose human Haha!!!");
+            }
+            else if ((humanChoice == "rock" && computerChoice == "rock") || (humanChoice == "paper" && computerChoice == "paper") || (humanChoice == "scissors" && computerChoice == "scissors")){
+                console.log("It is a tie. We shall meet again human!")
+            }
+            else {
+                console.log("You have won human! For now. muhaha");
+            }
+
+        }
+        // console.log( "the computer has chosen " + getComputerchoice());
+        // console.log( "human has chosen " + getHumanChoice());
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerchoice();
+        playRound(humanSelection, computerSelection);
+        
     </script>
 </body>
 </html>
