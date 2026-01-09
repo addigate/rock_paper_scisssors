@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="container"></div>
     <script>
         
         function getComputerchoice (){
@@ -54,41 +55,52 @@
 
             }
 
-        function playGame() {
-            let computerScore = 0;
-            let humanScore = 0;
+        // function playGame() {
+        //     let computerScore = 0;
+        //     let humanScore = 0;
 
-            for (let i=0; i<5; i++){
-                const roundresult = playRound(getHumanChoice(), getComputerchoice());
-                if (roundresult == "human"){
-                    humanScore++;
-                }
-                else if (roundresult == "computer"){
-                    computerScore++;
-                }
-                else{
-                    continue;
-                }
-            }
+        //     for (let i=0; i<5; i++){
+        //         const roundresult = playRound(getHumanChoice(), getComputerchoice());
+        //         if (roundresult == "human"){
+        //             humanScore++;
+        //         }
+        //         else if (roundresult == "computer"){
+        //             computerScore++;
+        //         }
+        //         else{
+        //             continue;
+        //         }
+        //     }
 
-            if (humanScore < computerScore) {
-                console.log("The winner is "+ "the computer");
-            }
-            else if (humanScore > computerScore) {
-                console.log("The winner is "+ "the human!");
-            }
-            else {
-                console.log("It's a draw");
-            }
-        }
+        //     if (humanScore < computerScore) {
+        //         console.log("The winner is "+ "the computer");
+        //     }
+        //     else if (humanScore > computerScore) {
+        //         console.log("The winner is "+ "the human!");
+        //     }
+        //     else {
+        //         console.log("It's a draw");
+        //     }
+        // }
 
-        playGame();
+        // playGame();
         // console.log( "the computer has chosen " + getComputerchoice());
         // console.log( "human has chosen " + getHumanChoice());
         // const humanSelection = getHumanChoice();
         // const computerSelection = getComputerchoice();
+
         
-        
+        let div_1 = document.querySelector("#container");
+        let rockbutton = document.createElement("button");
+        rockbutton.textContent = "Rock"
+        let paperbutton = document.createElement("button");
+        paperbutton.textContent = "Paper";
+        let scissorbutton = document.createElement("button");
+        scissorbutton.textContent = "Sissors";
+        div_1.appendChild(rockbutton);
+        div_1.appendChild(paperbutton);
+        div_1.appendChild(scissorbutton);
+        // playRound(getHumanChoice(),getComputerchoice());
     </script>
 </body>
 </html>
