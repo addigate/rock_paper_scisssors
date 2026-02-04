@@ -7,8 +7,9 @@
 </head>
 <body>
     <div id="container"></div>
-    <div id="scoresheet"></div>
+    <div id="choicediv"></div>
     <div id="resultsheet"></div>
+    <div id="scoreboard"></div>
     <script>
         
         function getComputerchoice (){
@@ -42,7 +43,7 @@
         
         function playRound(humanChoice, computerChoice){
                 // console.log("Human has chosen "+humanChoice+ " and computer has chosen "+computerChoice);
-                scorediv.textContent = "Human has chosen "+humanChoice+" and computer has chosen "+computerChoice;
+                choicediv.textContent = "Human has chosen "+humanChoice+" and computer has chosen "+computerChoice;
                 if (((humanChoice == "rock") && (computerChoice == "paper"))||((humanChoice == "scissors") && (computerChoice=="rock"))){
                     // console.log("You loose human Haha!!!");
                     resultdiv.textContent = "You loose human Haha!!!";
@@ -82,53 +83,26 @@
             if (roundsPlayed==5) {
                 
                 if (humanScore > computerScore) {
-                    console.log("Final score: Human wins!");
+                    scoreboard.textContent = "Final score: Human wins!" + "Computer score: "+computerScore+" ----- Human score: "+humanScore;
                 }
 
                 else if(computerScore > humanScore) {
-                    console.log("Final score: Computer wins!");
+                    scoreboard.textContent = "Final score: Computer wins!" + "Computer score: "+computerScore+" ----- Human score: "+humanScore;
                 }
                 else {
-                    console.log("Final score: It's a draw!");
+                    scoreboard.textContent = "Final score: It's a draw!"  + "Computer score: "+computerScore+" ----- Human score: "+humanScore;;
                 }
             }
-            // for (let i=0; i<5; i++){
-            //     const roundresult = playRound(humanChoice, computerChoice);
-            //     if (roundresult == "human"){
-            //         humanScore++;
-            //         console.log("Human score is " + humanScore);
-            //     }
-            //     else if (roundresult == "computer"){
-            //         computerScore++;
-            //         console.log("Computer score is "+ computerScore);
-            //     }
-            //     else{
-            //         continue;
-            //     }
-            // }
-
-            // if (humanScore < computerScore) {
-            //     console.log("The winner is "+ "the computer");
-            // }
-            // else if (humanScore > computerScore) {
-            //     console.log("The winner is "+ "the human!");
-            // }
-            // else {
-            //     console.log("It's a draw");
-            // }
+        
         }
 
-        
-        // console.log( "the computer has chosen " + getComputerchoice());
-        // console.log( "human has chosen " + getHumanChoice());
-        // const humanSelection = getHumanChoice();
-        // const computerSelection = getComputerchoice();
 
         
         let div_1 = document.querySelector("#container");
-        let scorediv = document.querySelector("#scoresheet");
+        let choicediv = document.querySelector("#choicediv");
         let resultdiv = document.querySelector("#resultsheet");
         let rockbutton = document.createElement("button");
+        let scoreboard = document.querySelector("#scoreboard");
         rockbutton.textContent = "Rock"
         let paperbutton = document.createElement("button");
         paperbutton.textContent = "Paper";
